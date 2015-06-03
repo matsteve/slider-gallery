@@ -146,6 +146,7 @@ main section{
 /*------------- Gallery ----------------*/
 
 .gallery{
+    position: relative;
     width: 100%;
     margin: 20px auto;
 }
@@ -203,12 +204,12 @@ main section{
 }
 
 .gallery .next-btn{
-    right:120px;
+    right:5%;
     background:url(../img/next_arrow.png) no-repeat top left;
 }
 
 .gallery .prev-btn{
-    left:120px;
+    left:5%;
     background:url(../img/prev_arrow.png) no-repeat top left;
 }
 

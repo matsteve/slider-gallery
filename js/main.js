@@ -13,16 +13,16 @@ $(document).ready(function(){
 		timeout;
 
 	function slideToImage(){
+		clearTimeout(timeout);
+		timeout = setTimeout(nextImage, delay); 
 		$slider.css({'margin-left': -currentIndex*100+"%"});
 		$thumbs.filter('.selected').removeClass('selected');
-		$thumbs.eq(currentIndex).addClass('selected'); 
+		$thumbs.eq(currentIndex).addClass('selected');
 	}
 
 	function nextImage(){
-		clearTimeout(timeout);
 		currentIndex = (currentIndex < lastIndex)? currentIndex + 1 : 0;
 		slideToImage();
-		timeout = setTimeout(nextImage, delay);
 	}
 
 	//initialise
@@ -35,6 +35,7 @@ $(document).ready(function(){
 	//set thumb selected state
 	$thumbs.eq(currentIndex).addClass('selected');
 	$mask.css({overflow: 'hidden'});
+	//initialise timeout
 	timeout = setTimeout(nextImage, delay);
 
 	$thumbs.click(function(){
